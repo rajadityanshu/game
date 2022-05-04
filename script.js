@@ -1,13 +1,15 @@
 console.log("hii");
 score = 0;
 cross = true;
+audioj = new Audio('jump.mp3');
 audiof = new Audio('over.mp3');
-audio = new Audio('https://s3-us-west-2.amazonaws.com/s.cdpn.io/264161/Antonio-Vivaldi-Summer_01.mp3');
+audio = new Audio('game.mp3');
 setTimeout(() => {
     audio.play();
 }, 1000);
 document.onkeydown = function(e){
     if(e.keyCode==38){
+        audioj.play();
         dino = document.querySelector('.dino');
 
         dino.classList.add('animatedino');
@@ -17,12 +19,14 @@ document.onkeydown = function(e){
      
     }
     if(e.keyCode==39){
+        audioj.play();
         dino = document.querySelector('.dino');
         dinoX = parseInt(window.getComputedStyle(dino, null).getPropertyValue('left'));
 dino.style.left = dinoX + 112 + "px";
      
 }
 if(e.keyCode==37){
+    audioj.play();
     dino = document.querySelector('.dino');
     dinoX = parseInt(window.getComputedStyle(dino, null).getPropertyValue('left'));
 dino.style.left =( dinoX - 112 ) + "px";
@@ -45,9 +49,10 @@ console.log(offsetX,offsetY)
 if (offsetY< 50 && offsetX< 50) {
     gameover.style.visibility = 'visible';
     obstacle.classList.remove('obstacleAni')
+    audio.pause();
     audiof.play();
-    setTimeout(() => {
-        audio.pause();
+    setTimeout(() => 
+               
         audiof.pause();
     }, 3000);
 }
