@@ -4,7 +4,7 @@ cross = true;
 audiof = new Audio('over.mp3');
 audio = new Audio('https://s3-us-west-2.amazonaws.com/s.cdpn.io/264161/Antonio-Vivaldi-Summer_01.mp3');
 setTimeout(() => {
-    audio.play()
+    audio.play();
 }, 1000);
 document.onkeydown = function(e){
     if(e.keyCode==38){
@@ -45,9 +45,9 @@ console.log(offsetX,offsetY)
 if (offsetY< 50 && offsetX< 50) {
     gameover.style.visibility = 'visible';
     obstacle.classList.remove('obstacleAni')
-    audio.pause();
     audiof.play();
     setTimeout(() => {
+        audio.pause();
         audiof.pause();
     }, 3000);
 }
