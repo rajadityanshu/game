@@ -51,7 +51,7 @@ if (offsetY< 50 && offsetX< 50) {
     obstacle.classList.remove('obstacleAni')
     audio.pause();
     audiof.play();
-    setTimeout(() => 
+    setTimeout(() => {
                
         audiof.pause();
     }, 3000);
