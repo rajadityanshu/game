@@ -1,10 +1,10 @@
 *{
     margin: 0;
     padding: 0;
-
+ font-family: 'Itim', cursive;
 }
 body{
-    background-color: red;
+    background-color: black;
 overflow: hidden;
 }
 
